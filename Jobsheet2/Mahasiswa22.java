@@ -9,10 +9,10 @@ class Mahasiswa {
     double ipk;
 
     void tampilkanInformasi(){
-        System.out.println("Nama; " + nama);
-        System.out.println("NIM; " + nim);
-        System.out.println("IPK; " + ipk);
-        System.out.println("Kelas; " + kelas);
+        System.out.println("Nama: " + nama);
+        System.out.println("NIM: " + nim);
+        System.out.println("IPK: " + ipk);
+        System.out.println("Kelas: " + kelas);
     }
     void ubahKelas(String kelasBaru){
         kelas = kelasBaru;
@@ -30,5 +30,13 @@ class Mahasiswa {
         } else {
             return "Kurang";
         }
+    }
+    public Mahasiswa(){    
+    }
+    public Mahasiswa(String nm, String nim, double ipk, String kelas) {
+        nama = nm;
+        this.nim = nim;
+        this.kelas = kelas;
+        this.ipk = ipk;
     }
 }
