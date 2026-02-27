@@ -28,6 +28,16 @@ public class DosenDemo22 {
             System.out.println("Usia Dosen: "+arrayofDosen22[i].usia);
             System.out.println("---------------------------------------");
         }
+        System.out.println("\nDATA SEMUA DOSEN:");
+        DataDosen22.dataSemuaDosen(arrayofDosen22);
+        System.out.println("\nJUMLAH DOSEN PER JENIS KELAMIN:");
+        DataDosen22.jumlahDosenPerJenisKelamin(arrayofDosen22);
+        System.out.println("\nRATA-RATA USIA DOSEN PER JENIS KELAMIN:");
+        DataDosen22.rerataUsiaDosenPerJenisKelamin(arrayofDosen22);
+        System.out.println("\nINFO DOSEN PALING TUA:");
+        DataDosen22.infoDosenPalingTua(arrayofDosen22);
+        System.out.println("\nINFO DOSEN PALING MUDA:");
+        DataDosen22.infoDosenPalingMuda(arrayofDosen22);
         sc.close();
     }
     
