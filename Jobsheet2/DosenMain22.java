@@ -17,5 +17,4 @@ public class DosenMain22 {
         dosen d2 = new dosen("S45", "Siuuuuuu", true, 2000, "Pemrograman Objek");
         d2.tampilInformasi();
     }
-    
 }

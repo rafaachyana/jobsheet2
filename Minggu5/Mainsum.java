@@ -9,8 +9,6 @@ public class Mainsum {
     for (int i=0;i<elemen;i++){
         System.out.print("Masukan keuntungan ke-"+(i+1)+": ");
         sm.keuntungan[i]=sc.nextDouble();
-        int basis=sc.nextInt();
-        System.out.print("Masukan nilai pangkat elemen ke-"+(i+1)+":");
     }
     System.out.println("TOTAL KEUNTUNGAN MENGGUNAKAN BRUTEFIRCE: "+sm.totalBF());
     System.out.println("TOTAL KEUNTUNGAN MENGGUNAKAN DIVIDE AND CONQUER: "+sm.totalDC(sm.keuntungan, 0, elemen-1));

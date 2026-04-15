@@ -1,5 +1,4 @@
 package Minggu5;
-
 public class sum {
     double keuntungan[];
     sum(int el){
@@ -7,7 +6,7 @@ public class sum {
     }
     double totalBF(){
         double total=0;
-        for (int i=0;i<keuntungan.length;i++){
+        for(int i=0;i<keuntungan.length;i++){
             total=total+keuntungan[i];
         }
         return total;
@@ -18,7 +17,7 @@ public class sum {
         }
         int mid=(l+r)/2;
         double lsum=totalDC(arr,l,mid);
-        double rsum=totalDC(arr,mid+l, r);
+        double rsum=totalDC(arr,mid+1, r);
         return lsum+rsum;
     }
     
