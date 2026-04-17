@@ -1,5 +1,7 @@
 package CM1;
 import java.util.Scanner;
+
+import Quiz1.buku22;
 public class Main22 {
     public static void main(String[]args){
         Scanner sc=new Scanner(System.in);
@@ -30,6 +32,8 @@ public class Main22 {
             System.out.println("3. Tampilkan Peminjaman");
             System.out.println("4. Urutkan Berdasarkan Denda");
             System.out.println("5. Cari Berdasarkan NIM");
+            System.out.println("6. Tambah Data Peminjam Baru");
+            System.out.println("7. Tampilkan Statistik");
             System.out.println("0. Keluar");
             System.out.print("pilih: ");
             pilih=sc.nextInt();
@@ -78,7 +82,55 @@ public class Main22 {
                         }
                     }
                     if(!ketemu)System.out.println("Data tidak ditemukan.");
-                    break;      
+                    break;
+                case 6:
+                    System.out.println("Masukkan NIM: ");
+                    String nim=sc.nextLine();
+                    Mahasiswa22 mhsBaru=null;
+                    for(Mahasiswa22 m:mhs){
+                        if(m.nim.equals(nim)){
+                            mhsBaru=m;
+                            break;
+                        }
+                    }
+                    if(mhsBaru==null){
+                        System.out.println("NIM tidak ditemukan!");
+                        break;
+                    }
+                    System.out.println("Masukkan Kode Buku: ");
+                    String kodeInput=sc.nextLine();
+                    Buku22 bukuBaru=null;
+                    for(Buku22 b:buku){
+                        if(b.kodeBuku.equals(kodeInput)){
+                            bukuBaru=b;
+                            break;
+                        }
+                    }
+                    if(bukuBaru==null){
+                        System.out.println("Kode buku tidak ditemukan!");
+                        break;
+                    }
+                    System.out.println("Masukkan Lama Peminjaman");
+                    int lama=sc.nextInt();
+                    Peminjaman22[] pinjamBaru=new Peminjaman22[pinjam.length+1];
+                    for(int i=0;i<pinjam.length;i++){
+                        pinjamBaru[i]=pinjam[i];
+                    }
+                    pinjamBaru[pinjam.length]=new Peminjaman22(mhsBaru, bukuBaru, lama);
+                    pinjam=pinjamBaru;
+                    System.out.println("Data Berhasil Ditambahkan!");
+                    break;
+                case 7:
+                    int totalDenda=0, terlambat=0, tepatWaktu=0;
+                    for(Peminjaman22 p:pinjam){
+                        totalDenda+=p.denda;
+                        if(p.terlambat>0)terlambat++;
+                        else tepatWaktu++;
+                    }
+                    System.out.println("=== STATISTIK PEMINJAMAN ===");
+                    System.out.println("Total Denda Keseluruhan: Rp "+totalDenda);
+                    System.out.println("Jumlah Peminjaman Terlambat: "+terlambat);
+                    System.out.println("Jumlah Peminjaman Tepat Waktu: "+tepatWaktu);
             }
         }while(pilih!=0);
         sc.close();
