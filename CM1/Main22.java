@@ -37,6 +37,7 @@ public class Main22 {
             System.out.println("0. Keluar");
             System.out.print("pilih: ");
             pilih=sc.nextInt();
+            sc.nextLine();
 
             switch(pilih){
                 case 1:
@@ -84,8 +85,8 @@ public class Main22 {
                     if(!ketemu)System.out.println("Data tidak ditemukan.");
                     break;
                 case 6:
-                    System.out.println("Masukkan NIM: ");
-                    String nim=sc.nextLine();
+                    System.out.print("Masukkan NIM: ");
+                    String nim=sc.nextLine().trim();
                     Mahasiswa22 mhsBaru=null;
                     for(Mahasiswa22 m:mhs){
                         if(m.nim.equals(nim)){
@@ -97,7 +98,7 @@ public class Main22 {
                         System.out.println("NIM tidak ditemukan!");
                         break;
                     }
-                    System.out.println("Masukkan Kode Buku: ");
+                    System.out.print("Masukkan Kode Buku: ");
                     String kodeInput=sc.nextLine();
                     Buku22 bukuBaru=null;
                     for(Buku22 b:buku){
@@ -110,7 +111,7 @@ public class Main22 {
                         System.out.println("Kode buku tidak ditemukan!");
                         break;
                     }
-                    System.out.println("Masukkan Lama Peminjaman");
+                    System.out.print("Masukkan Lama Peminjaman: ");
                     int lama=sc.nextInt();
                     Peminjaman22[] pinjamBaru=new Peminjaman22[pinjam.length+1];
                     for(int i=0;i<pinjam.length;i++){
