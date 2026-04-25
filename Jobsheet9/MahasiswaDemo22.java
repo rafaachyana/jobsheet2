@@ -1,7 +1,5 @@
 package Jobsheet9;
 import java.util.Scanner;
-
-import Quiz1.mahasiswa22;
 public class MahasiswaDemo22 {
 
     public static void main(String[] args) {
@@ -40,6 +38,8 @@ public class MahasiswaDemo22 {
                         int nilai = sc.nextInt();
                         dinilai.tugasDinilai(nilai);
                         System.out.printf("Nilai Tugas %s adalah %d\n", dinilai.nama, nilai);
+                        String biner=stack.konversiDesilmalkeBiner(nilai);
+                        System.out.println("Nillai biner Tugas: "+biner+"\n");
                     }
                     break;
                 case 3:
