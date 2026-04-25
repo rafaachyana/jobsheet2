@@ -2,8 +2,8 @@ package Jobsheet9;
 import java.util.Scanner;
 public class SuratDemo22 {
     public static void main(String[] args) {
-        StackSurat22 stack = new StackSurat22(10);
-        Scanner sc = new Scanner(System.in);
+        StackSurat22 stack=new StackSurat22(10);
+        Scanner sc=new Scanner(System.in);
         int pilih;
         do{
             System.out.println("\nMenu:");
@@ -29,18 +29,18 @@ public class SuratDemo22 {
                     System.out.print("Durasi (hari): ");
                     int durasi=sc.nextInt();
                     sc.nextLine();
-                    if (jenis != 'S' && jenis != 'I'){
+                    if (jenis != 'S'&&jenis!='I'){
                         System.out.println("Jenis izin tidak valid! Gunakan S atau I.");
                         break;
                     }
-                    Surat22 surat = new Surat22(id, nama, kelas, jenis, durasi);
+                    Surat22 surat=new Surat22(id, nama, kelas, jenis, durasi);
                     stack.push(surat);
                     System.out.printf("Surat izin dari %s berhasil diterima.%n", nama);
                     break;
                 case 2:
-                    Surat22 diproses = stack.pop();
+                    Surat22 diproses=stack.pop();
                     if (diproses!=null){
-                        String jenisStr=(diproses.jenisIzin == 'S')?"Sakit":"Izin";
+                        String jenisStr=(diproses.jenisIzin=='S')?"Sakit":"Izin";
                         System.out.println("Memproses surat dari: "+diproses.namaMahasiswa);
                         System.out.println("ID Surat: "+diproses.idSurat);
                         System.out.println("Kelas: "+diproses.kelas);
@@ -50,8 +50,8 @@ public class SuratDemo22 {
                     }
                     break;
                 case 3:
-                    Surat22 terakhir = stack.peek();
-                    if (terakhir != null){
+                    Surat22 terakhir=stack.peek();
+                    if (terakhir!=null){
                         String jenisStr=(terakhir.jenisIzin=='S')?"Sakit":"Izin";
                         System.out.println("Surat terakhir masuk:");
                         System.out.println("ID Surat: "+terakhir.idSurat);
@@ -63,7 +63,7 @@ public class SuratDemo22 {
                     break;
                 case 4:
                     System.out.print("Masukkan nama mahasiswa: ");
-                    String cariNama = sc.nextLine();
+                    String cariNama=sc.nextLine();
                     stack.cariSurat(cariNama);
                     break;
                 case 5:
@@ -76,7 +76,7 @@ public class SuratDemo22 {
                 default:
                     System.out.println("Pilihan tidak valid.");
             }
-        }while(pilih != 6);
+        }while(pilih!=6);
         sc.close();
     }
 }
